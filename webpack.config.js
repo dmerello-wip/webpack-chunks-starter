@@ -3,7 +3,6 @@ const paths = require('./paths');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin  = require('copy-webpack-plugin');
-const dirNode = 'node_modules';
 
 module.exports = {
   mode:'development',
@@ -38,10 +37,7 @@ module.exports = {
     // Extract css files to separate bundle
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[name].[contenthash:4].css',
-      attributes:{
-        'data-css': '',
-      }
+      chunkFilename: '[name].[contenthash:7].css',
     }),
     // Copy fonts and images to dist
     new CopyWebpackPlugin({
@@ -83,7 +79,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js','.scss'],
-    modules: [paths.src, dirNode, paths.root],
     alias: {
       '@scssFolder' : paths.scss,
       request$: 'xhr',
