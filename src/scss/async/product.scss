@@ -1,5 +1,12 @@
 @import '@scssFolder/vars.scss';
 
+
+.test-component {
+    border: 3px solid yellow;
+}
+
 body {
     background: $secondaryColor;
 }
+
+
